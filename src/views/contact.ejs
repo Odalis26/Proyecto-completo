@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title%>
+    </title>
+    <%- include('partials/head')%>
+</head>
+
+<body>
+    <%- include('partials/navigation')%>
+        <main class="vh-100 container pt-2 text-center d-flex justify-content-center align-items-center">
+            <section>
+                <h1 class="display-1 ">Contáctame</h1>
+
+                <br> <br>
+                <h1 class=" text-uppercase fw-bold">Creditos del Proyecto</h1>
+                <!--main content-->
+                <br>
+                <h2>Persona que conformaron para la realización del proyecto</h2>
+                <header class="container vh-50 d-flex justify-content-center align-items-center"
+                    style="position: relative;top: 60px; left: 40px;">
+                    <div class="w-20" style="position: relative;top: -30px; left: -20px;">
+                        <img src="/img/Fernanda.jpeg" alt="" width="150px" height="250px">
+                        <h3><small>Odalis Rea 0993556321</small></h3>
+                    </div>
+            </section>
+        </main>
+        </header>
+        <a class="nav-link" href="http://localhost:7000" style="background-color: black; color:azure; width: 100px; height:30px;text-align: center; position: relative;top: 30px; left: 1337px;">Música</a>
+        <a class="nav-link" href="/about" style="background-color: black; color:azure; width: 100px; height:30px;text-align: center;">Productos</a>
+        <%- include('partials/footer')%>
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<script src="../assets/assets/js/validator.js"></script>
+<script>
+
+    $().ready(function () {
+
+        // validate signup form on keyup and submit
+        $("#formulario").validate({
+            rules: {
+                clientes: {
+                    required: true
+                },
+                fecha: {
+                    required: true,
+                    date: true
+                },
+                nro: {
+                    required: true,
+                    minlength: 3
+                },
+                subtotal: {
+                    required: true,
+                    number: true
+                },
+                iva: {
+                    required: true,
+                    number: true
+                },
+                total: {
+                    required: true,
+                    number: true
+                }
+            },
+            messages: {
+                clientes: {
+                    required: "Ingrese la cedula"
+                }
+            }
+        });
+//Se calcula el impuesto al valor agregado
+        function calcularIva() {
+            var subtotal = $("#subtotal").val();
+            //El iva esta definido ya
+            var iva = subtotal * 1 * 0.12;
+            $("#iva").val(iva);
+        }
+//Se realiza la operacion para calcular el total a pagar
+        function calcularTotal() {
+            calcularIva();
+            var subtotal = $("#subtotal").val();
+            var iva = $("#iva").val();
+            //Se considera el descento establecido en la vista
+            var desc = $("#descuento").val();
+            //Calcula el descuento
+            var descuento = ((subtotal * 1) + (iva * 1)) * (desc / 100);
+            var total = ((subtotal * 1) + (iva * 1) - (descuento));
+            $("#total").val(total);
+        }
+//Agregar el valor al input de manera automatica
+        $("#subtotal").keyup(function () {
+            calcularTotal();
+        });
+//Cada vez que se cambie la cantidad determinada para el descuento debe volver a calcular el total 
+//para que los datos se actualicen automaticamente
+        $("#descuento").change(function () {
+            calcularTotal();
+        });
+
+    });
+</script>
+<br>
+<section id="content">
+    <% if (locals.flash) { %>
+    <div class="alert alert-danger" style="background-color: rgb(157, 252, 4); color: rgb(0, 0, 0);border: 2px solid rgb(157, 252, 4);">
+        <%- locals.flash %>
+    </div>
+    <% } %>  
+    <form method="POST" action="/registro/facturas/guardar" id="formulario">
+        <div class="row gtr-uniform gtr-50">
+            <!--            Almacena el externalId para las modificaciones-->
+            <input type="hidden" value="0" id="external" name="external"/>    
+            <div class="col-12">
+                <select name="clientes" id="clientes" style="background-color: rgb(0, 0, 0); color: rgb(0, 255, 234);">
+                    <!--                    Recorrer la lista de facturas para presentarlas en las pantallas de usuario-->
+                    <% lista.forEach(function(persona, i) { %>
+                    <!--                    persona.id por que es por medio de el que se relacionan y se identifican los datos-->
+                    <option style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"value="<%= persona.id %>"><%= persona.nombres %> <%= persona.apellidos %></option>
+                    <% }); %>
+                </select>
+            </div>
+
+            <div class="col-6 col-12-xsmall">
+                <!--                se añede un estilo extra para efectos de presentacion-->
+                <input type="date" name="fecha" id="fecha" placeholder="Fecha" style="color: rgb(255, 255, 255); background-color: rgb(0, 171, 184); position: relative; top: 7px;border: 2px solid rgb(0, 225, 255);"/>
+            </div>
+
+            <div class="col-6 col-12-xsmall">
+                <input type="text" name="nro" id="nro" placeholder="Nro Factura" style="border: 2px solid rgb(0, 119, 255); position: relative; top: 6px; color:rgb(0, 119, 255);"/>
+            </div>
+
+            <div class="col-6 col-12-xsmall">
+                <input type="text" name="subtotal" id="subtotal" placeholder="Subtotal" style="border: 2px solid rgb(0, 156, 196); position: relative; top: 14px; color:rgb(0, 156, 196);"/>
+            </div>
+
+            <div class="col-6 col-12-xsmall">
+                <input type="text" name="iva" id="iva"  placeholder="Iva" style="border: 2px solid rgb(161, 6, 6); position: relative; top: 14px; color:rgb(161, 6, 6);" readonly/>
+            </div>
+
+            <div class="col-12">
+                <select name="descuento" id="descuento" style="border: 2px solid rgb(0, 0, 0);  position: relative; top: 23px; background-color: rgb(0, 0, 0); color: rgb(157, 252, 4);">
+                    <option value="0">0</option>
+                    <option value="5">5%</option>
+                    <option value="10">10%</option>
+                </select>
+            </div>
+
+            <div class="col-6 col-12-xsmall">
+                <input type="text" name="total" id="total"  placeholder="Total" style="border: 2px solid rgb(2, 97, 121); position: relative; top: 32px;left: 551px; color:rgb(2, 97, 121); "readonly/>
+            </div>
+            <div class="col-12">
+                <ul class="actions navbar-nav">
+                    <br>
+                    <li><input type="submit" value="GUARDAR" class="primary" style="background-color:rgb(27, 128, 7); border: 2px solid rgb(27, 128, 7); border-radius: 10%; color:rgb(255, 255, 255); width:150px; height: 40px;position: relative; top: 45px; left: 173px;"/></li>
+                    <br>
+                    <li><a href="/registro/facturas" class="btn btn-danger" style="position: relative; top: -30px; left: 393px;width:150px; height: 40px;font-size: 20px;">CANCELAR</a></li>
+                </ul>
+            </div>
+        </div>
+    </form>
+</section>
+

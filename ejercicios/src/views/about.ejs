@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title%>
+    </title>
+    <%- include('partials/head')%>
+</head>
+
+<body>
+    <%- include('partials/navigation')%>
+        <br>
+        <br>
+        <br>
+        <h1 class=" text-uppercase fw-bold">Ejercicios de Entrenamiento</h1>
+        <br>
+        <br>
+        <h2>Ejercicios de Entrenamiento para Cardio</h2>
+        <br>
+        <br>
+        <div class="container vh-50 d-flex justify-content-center align-items-center"
+            style="position: relative;top: 60px; left: 40px;">
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <img src="data:image/jpeg;base64,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"
+                    alt="" width="250px" height="200px">
+                <h3><small>SALTAR A LA COMBA </small></h3>
+            </div>
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRXlNjW2gM1oHC_4bcn9WiiJTGDLbYmb8Ikw&usqp=CAU"
+                    alt="" width="250px" height="200px">
+                <h3><small>JUMPING JACKS</small></h3>
+            </div>
+            <div class="w-25" style="position: relative;top: -21px; left: 40px;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRchGz9QZKNZiXpUPScftvh9UMeRx_7wQTsIg&usqp=CAU"
+                    alt="" width="250px" height="200px">
+                <h3><small>BURPEES</small></h3>
+            </div>
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPbEz4y8BJn6xRE0hoRPveJjj-u4CsKVkI5w&usqp=CAU"
+                    alt="" width="250px" height="200px">
+                <h3><small>ROLLBACKS</small></h3>
+
+            </div>
+
+        </div>
+        <div class="container vh-50 d-flex justify-content-center align-items-left"
+            style="position: relative;top: 60px; left: 40px;">
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <h4><small>¿Cómo se realiza?</small></h4>
+                <p><small>Saltar a la comba es un ejercicio que requiere coordinación de movimientos,
+                        equilibrio, fuerza y resistencia. Es una manera muy eficaz de hacer ejercicio intenso,
+                        necesitando poco tiempo y un mínimo de material. En vitónica puedes leer más sobre saltar a la
+                        comba en este artículo.</small></p>
+            </div>
+
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <h4><small>¿Cómo se realiza?</small></h4>
+                <p><small>Es un ejercicio en el que, estando de pie, hay que saltar y separar las piernas a la vez que
+                        das una palmada sobre la
+                        cabeza, para después volver a saltar y unir las piernas, volviendo a dejar las manos abajo, a lo
+                        largo del cuerpo. Creo que lo he explicado de manera que se entiende.</small></p>
+            </div>
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <h4><small>¿Cómo se realiza?</small></h4>
+                <p><small> Se parte de posición de pie,
+                        te agachas, te tiras al suelo haciendo una flexión de brazos, desde esa posición te
+                        reincorporas, te pones de pie, y das un salto vertica. Repetir y repetir, y ya verás como
+                        empiezas a sudar.</small></p>
+            </div>
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <h4><small>¿Cómo se realiza?</small></h4>
+                <p><small>Comienza de pie. Con un solo movimiento, siéntate en el suelo y rueda hacia atrás, llevando
+                        las caderas y los talones hacia el techo. Vuelve a poner los pies en el suelo y a ponerte de
+                        pie. Esa es una repetición.</small></p>
+            </div>
+
+        </div>
+        <div class="container vh-50 d-flex justify-content-center align-items-center"
+            style="position: relative;top: 60px; left: 40px;">
+
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfai1D3Ka7dLyE-h--91hJYKVa4WMa34Drpw&usqp=CAU"
+                    alt="" width="250px" height="200px">
+                <h3><small>BURPEE CON SALTO DE 180º</small></h3>
+            </div>
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPC5RNRIRonUNymuxm_RhRB7Z157EtwV7saw&usqp=CAU"
+                    alt="" width="250px" height="200px">
+                <h3><small>LATERAL TOE TAPS</small></h3>
+            </div>
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTonk3NRwGysVCxYL2OtIKI-UJtEqUqE1v2fg&usqp=CAU"
+                    alt="" width="250px" height="200px">
+                <h3><small>LATERAL SHUFFLE TAPS</small></h3>
+            </div>
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <img src="https://i.ytimg.com/vi/Zq9bj8pSZb8/maxresdefault.jpg" alt="" width="250px" height="200px">
+                <h3><small>SIT-OUTS</small></h3>
+            </div>
+
+        </div>
+        <div class="container vh-50 d-flex justify-content-center align-items-left"
+            style="position: relative;top: 60px; left: 40px;">
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <h4><small>¿Cómo se realiza?</small></h4>
+                <p><small>Comienza en posición de sentadilla, con los pies separados al ancho de los hombros. Deja caer
+                        las caderas y coloca las palmas en el suelo, luego salta con los pies hacia atrás y baja tu
+                        cuerpo hasta el suelo. Ponte de pie y luego salta con los pies hacia delante para volver a la
+                        posición de sentadilla. Finalmente, salta hacia arriba girando 180 grados. Luego repite hacia el
+                        otro lado. Esa es una repetición.</small></p>
+            </div>
+
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <h4><small>¿Cómo se realiza?</small></h4>
+                <p><small>Coloca un cono, mancuerna, pesas rusas (kettlebell) o algún tipo de objetivo entre tus pies.
+                        Comienza con el pie derecho sobre el objetivo, manteniendo el peso en el pie izquierdo. Cambia
+                        rápidamente los pies para que tu pie izquierdo esté sobre el objetivo. Esa es una repetición.
+                        Continúa alternando pies mientras golpeas ligeramente la punta del pie en el objetivo.</small>
+                </p>
+            </div>
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <h4><small>¿Cómo se realiza?</small></h4>
+                <p><small>De pie en una posición atlética, con los pies más separados que la distancia entre las
+                        caderas, arrastra el pie un par de pasos hacia la izquierda y luego toca el suelo. Vuelve a
+                        arrastrar el pie y toca el suelo una vez que alcances el punto de partida. Esa es una
+                        repetición. Continuar alternando.</small></p>
+            </div>
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <h4><small>¿Cómo se realiza?</small></h4>
+                <p><small>Comienza en plancha con las rodillas ligeramente separadas del suelo, los hombros sobre las
+                        muñecas, las rodillas debajo de las caderas. Lleva una pierna hacia adelante a través del
+                        cuerpo, pasándola por debajo de la otra pierna y levantando el brazo opuesto mientras dejas caer
+                        tu cadera al suelo. Lleva el talón hacia atrás para volver a comenzar, luego haz lo mismo en el
+                        lado opuesto. Esa es una repetición.</small></p>
+            </div>
+
+        </div>
+        <br>
+        <br>
+        <div class="container vh-50 d-flex justify-content-center align-items-center"
+            style="position: relative;top: 60px; left: 40px;">
+
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <img src="/img/run.png" alt="" width="250px" height="200px">
+                <h3><small>RUNNING</small></h3>
+                <h4><small>¿Cómo se realiza?</small></h4>
+                <p><small>Céntrate en utilizar los brazos de forma eficiente y en mantener el rango de movimiento
+                        adecuado. Cuando las piernas empiecen a responder mejor, añade velocidad tanto a los brazos como
+                        a las piernas. Haz el ejercicio de 10 a 20 metros cada vez y recupérate un momento.</small></p>
+            </div>
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <img src="/img/eli.png" alt="" width="250px" height="200px">
+                <h3><small>ELÍPTICA</small></h3>
+                <h4><small>¿Cómo se realiza?</small></h4>
+                <p><small>Se debe empujar y tirar de forma activa de los mangos, no sólo aferrarse. Apoyarse en la
+                        máquina puede reducir el fortalecimiento y los efectos de quemar grasa con elíptica. Además, con
+                        el tiempo, puede tensar los hombros y la espalda. Es importante revisar la velocidad.</small>
+                </p>
+            </div>
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <img src="/img/sen.png" alt="" width="250px" height="200px">
+                <h3><small>SENDERISMO</small></h3>
+                <h4><small>¿Cómo se realiza?</small></h4>
+                <p><small>Colócate derecho, con los pies a la altura de los hombros y con la espalda recta.
+                        Empieza el movimiento doblando rodillas y sacando los glúteos como si fueras a sentarte.
+                        Sigue descendiendo hasta ponerte prácticamente de cuclillas, con los muslos paralelos al
+                        suelo.</small></p>
+            </div>
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <img src="/img/bici.png" alt="" width="250px" height="200px">
+                <h3><small>BICICLETA</small></h3>
+                <h4><small>¿Cómo se realiza?</small></h4>
+                <p><small>Si disopnemos de una bicicleta en nustro departamento podemos utilizarla como queramos sin
+                        ningun y tratar de ver videso en internet de como realizar actividades en nuestar bicicleta. O
+                        si no tratar de realizar el estilo de bicicleta acostados y simular qeu tenemos una.</small></p>
+            </div>
+
+        </div>
+        <div class="container vh-50 d-flex justify-content-center align-items-center"
+            style="position: relative;top: 60px; left: 40px;">
+
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <img src="/img/bur.png" alt="" width="250px" height="200px">
+                <h3><small>BURPEES</small></h3>
+                <h4><small>¿Cómo se realiza?</small></h4>
+                <p><small>Para realizar el ejercicio de «burpees» se parte de una posición inicial en cuclillas, se
+                        colocan las manos en el suelo y se mantiene la cabeza erguida. Después se desplazan las piernas
+                        hacia atrás con los pies juntos y se hace una flexión de pecho</small></p>
+            </div>
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <img src="/img/salto.jpg" alt="" width="250px" height="200px">
+                <h3><small>SENTADILLAS CON SALTO</small></h3>
+                <h4><small>¿Cómo se realiza?</small></h4>
+                <p><small>Las sentadillas con salto, conocidas como las sentadillas más explosivas, comienzan con los
+                        pies por fuera de las caderas y las rodillas en la misma dirección que las puntas de los pies.
+                        Luego echamos la cadera hacia atrás y flexionamos las caderas en 90 grados.</small></p>
+            </div>
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <img src="/img/mou.png" alt="" width="250px" height="200px">
+                <h3><small>MOUNTAIN CLIMBERS</small></h3>
+                <h4><small>¿Cómo se realiza?</small></h4>
+                <p><small>Para empezar hay que colocarse tumbados boca abajo en el suelo apoyando las manos con los
+                        dedos dirigidos hacia el frente a la anchura de los hombros como en una plancha isométrica con
+                        los brazos extendidos y el cuerpo apoyado sobre las palmas de las manos y los dedos de los pies
+                    </small></p>
+            </div>
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <iframe width="250" height="200" src="https://www.youtube.com/embed/QQkpHI9qv0A"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <h3><small>HIIT</small></h3>
+                <h4><small>¿Cómo se realiza?</small></h4>
+                <p><small>El entrenamiento HIIT (entrenamiento a intervalos de alta intensidad) se define como la
+                        realización de sesiones cortas (de entre 4 y 20 minutos) con series de entre 20 segundos hasta 4
+                        min de ejercicios HIIT (de intensidad alta, no máxima), intercalados con períodos de
+                        recuperación o intensidad baja</small></p>
+            </div>
+
+        </div>
+        <br>
+        <br>
+        <br>
+        <h1 class=" text-uppercase fw-bold">Rutinas de Ejercicios de Entrenamiento</h1>
+        <br>
+        <br>
+        <h2>Rutinas de Ejercicios de Entrenamiento para Cardio</h2>
+        <br>
+        <br>
+        <div class="container vh-50 d-flex justify-content-center align-items-center"
+            style="position: relative;top: 60px; left: 40px;">
+
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <iframe width="250" height="200" src="https://www.youtube.com/embed/r042VgJCe40" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h3><small>Ejercicios cardiovasculares para quemar grasa de todo el cuerpo</small></h3> 
+                <p> Hoy os traemos una rutina algo más exigente que las semanas anteriores. Con ella quemarás muchas calorías</p>
+            </div>
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <iframe width="250" height="200" src="https://www.youtube.com/embed/0YRX4pEP6pY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h3><small>CARDIO 30 MINUTOS PARA ELIMINAR GRASA ABDOMINAL</small></h3> 
+                <p> Hoy os traigo una rutina de cardio con ejercicios para reducir la cintura de 30 minutos</p>
+            </div>
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <iframe width="250" height="200" src="https://www.youtube.com/embed/VKOYzh10ipE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h3><small>Rutina Cardio Todo el Cuerpo 30 minutos </small></h3> 
+                <p> Está compuesto por 10 diferentes ejercicios aeróbicos que irán aumentando de intensidad progresivamente  </p>
+            </div>
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <iframe width="250" height="200" src="https://www.youtube.com/embed/WNz9C_vyIB0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h3><small>Cardio Sin Saltos Para Perder Peso Rapido</small></h3> 
+                <p> Tiene una duración de 20 minutos incluido el estiramiento al final. Es ideal si tienes poco tiempo</p>
+            </div>
+
+        </div>
+        <div class="container vh-50 d-flex justify-content-center align-items-center"
+            style="position: relative;top: 60px; left: 40px;">
+
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <iframe width="250" height="200" src="https://www.youtube.com/embed/FJJ0dAsTg7o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h3><small>Cardio en Casa para Quitar Grasa Rapido</small></h3> 
+                <p> Hoy les mostrare una rutina de cardio en casa para adelgazar y bajar de peso. Es un entrenamiento muy intenso</p>
+            </div>
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <iframe width="250" height="200" src="https://www.youtube.com/embed/yOkFhJBEKwo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h3><small>RUTINA de ejercicios para ADELGAZAR</small></h3> 
+                <p> Esta rutina para adelgazar o para bajar de peso me la habéis pedido muchísimos fuertacos, así que vuestros deseos son órdenes </p>
+            </div>
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <iframe width="250" height="200" src="https://www.youtube.com/embed/IiAJz6WCHvc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h3><small>CARDIO SIN SALTOS para PERDER PESO RAPIDOR</small></h3> 
+                <p> Esta rutina para adelgazar esat compuesta de mucho baile para tener una buena resistencia</p>
+            </div>
+            <div class="w-25" style="position: relative;top: -30px; left: 40px;">
+                <iframe width="250" height="200" src="https://www.youtube.com/embed/x5BuK8JqODU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <h3><small>CARDIO PARA QUEMAR GRASA EN TODO EL CUERPO</small></h3> 
+                <p> este video para "quemar grasa en todo el cuerpo" aparte de mejorar tu salud, es mejorar tu sistema cardio vascular</p>
+            </div>
+
+        </div>
+        <br>
+        <br>
+        <br>
+        <a class="nav-link" href="/contact"
+            style="background-color: black; color:azure; width: 100px; height:30px;text-align: center; position: relative;top: 30px; left: 1337px;">Equilibrio</a>
+        <a class="nav-link" href="/"
+            style="background-color: black; color:azure; width: 100px; height:30px;text-align: center;position: relative;top: 0px;">Flexibilidad</a>
+
+        <%- include('partials/footer')%>
+</body>
+
+</html>
